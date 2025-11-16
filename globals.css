@@ -1,0 +1,212 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 255, 255, 255;
+  --text-size: 100%;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* Force light theme for consistent white background */
+:root,
+[data-theme] {
+  --background: #ffffff;
+  font-size: var(--text-size, 100%);
+  --foreground: #171717;
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 255, 255, 255;
+  /* Tambahkan transisi dari AccessibilityMenu.module.css */
+  transition: background-color 0.3s ease, filter 0.3s ease;
+}
+
+/* High Contrast Mode */
+.high-contrast {
+  --background: #000000 !important;
+  --foreground: #ffffff !important;
+  --color-background: #000000 !important;
+  --color-foreground: #ffffff !important;
+  background: #000 !important;
+  color: #fff !important;
+}
+
+.high-contrast * {
+  background: #000 !important;
+  color: #fff !important;
+  border-color: #fff !important;
+}
+
+.high-contrast a,
+.high-contrast button,
+.high-contrast [role="button"],
+.high-contrast [tabindex="0"] {
+  outline: 2px solid #ffff00 !important;
+  outline-offset: 2px;
+}
+
+.high-contrast a:hover,
+.high-contrast button:hover {
+  text-decoration: underline !important;
+  text-decoration-thickness: 2px !important;
+}
+
+/* Grayscale Mode */
+.grayscale {
+  filter: grayscale(100%) !important;
+  -webkit-filter: grayscale(100%) !important;
+}
+
+/* Ensure images and videos also get the grayscale effect */
+.grayscale img,
+.grayscale video,
+.grayscale iframe,
+.grayscale picture,
+.grayscale svg {
+  filter: grayscale(100%) !important;
+  -webkit-filter: grayscale(100%) !important;
+}
+
+/* Reduce Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+    background-attachment: initial !important;
+  }
+}
+
+/* Enhanced Reduce Motion for when the setting is toggled */
+.reduce-motion *,
+.reduce-motion *::before,
+.reduce-motion *::after {
+  animation: none !important;
+  transition: none !important;
+  scroll-behavior: auto !important;
+  background-attachment: initial !important;
+}
+
+/* Specific animations/transitions to disable */
+.reduce-motion [style*="animation"],
+.reduce-motion [style*="transition"] {
+  animation: none !important;
+  transition: none !important;
+}
+
+/* Disable parallax and other motion effects */
+.reduce-motion [style*="transform"],
+.reduce-motion [style*="perspective"] {
+  transform: none !important;
+  perspective: none !important;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* Standard Hero Section */
+.hero-section {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+  padding: 80px 20px;
+  color: white;
+  position: relative;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 60px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero-section h1 {
+  font-size: 40px;
+  margin: 0;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Global html element styles */
+html {
+  transition: background-color 0.3s ease, filter 0.3s ease !important;
+  font-size: 100%;
+}
+
+/* === Fokus Glow Mode === */
+html[data-theme='focus-glow'] {
+  --bg-color: #0f111a;
+  --text-color: #e0e6ff;
+  --card-bg: #161b26;
+  --accent-color: #5b8cff;
+  --accent-glow: 0 0 10px rgba(91, 140, 255, 0.7);
+  --button-bg: #1d2333;
+  --button-hover: #5b8cff;
+}
+
+[data-theme='focus-glow'] body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.4s, color 0.4s;
+}
+
+/* Efek glow untuk tombol dan link */
+[data-theme='focus-glow'] button,
+[data-theme='focus-glow'] a {
+  background-color: var(--button-bg);
+  color: var(--text-color);
+  border: 1px solid rgba(91, 140, 255, 0.3);
+  box-shadow: none;
+  transition: all 0.3s ease;
+}
+
+[data-theme='focus-glow'] button:hover,
+[data-theme='focus-glow'] a:hover {
+  background-color: var(--button-hover);
+  color: #fff;
+  box-shadow: var(--accent-glow);
+  transform: translateY(-2px);
+}
+
+/* Fokus visual (misalnya saat tab keyboard) */
+[data-theme='focus-glow'] button:focus,
+[data-theme='focus-glow'] a:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(91, 140, 255, 0.5), var(--accent-glow);
+}
+
+/* Card atau section */
+[data-theme='focus-glow'] .card {
+  background: var(--card-bg);
+  box-shadow: 0 0 10px rgba(91, 140, 255, 0.1);
+  border-radius: 16px;
+  transition: box-shadow 0.3s ease;
+}
+
+[data-theme='focus-glow'] .card:hover {
+  box-shadow: 0 0 20px rgba(91, 140, 255, 0.3);
+}

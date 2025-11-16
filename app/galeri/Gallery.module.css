@@ -1,0 +1,86 @@
+.gallerySection {
+  width: 100%;
+  background-color: #fff;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  padding-top: 170px;
+  padding-bottom: 250px;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin: 0;
+}
+
+/* Top Grid - 3 equal columns */
+.topGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+
+/* Bottom Grid - 3 equal columns */
+.bottomGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+
+/* Image card styling */
+.card {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+}
+
+.galleryImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.card:hover .galleryImage {
+  transform: scale(1.05);
+}
+
+/* Middle red line with text */
+.middleLine {
+  background-color: #b40000;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.middleLine h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.middleLine p {
+  font-size: 1.1rem;
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .topGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .bottomGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .middleLine {
+    padding: 30px 15px;
+  }
+  
+  .middleLine h2 {
+    font-size: 1.75rem;
+  }
+  
+  .middleLine p {
+    font-size: 1rem;
+  }
+}

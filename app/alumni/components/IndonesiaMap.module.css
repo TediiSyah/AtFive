@@ -1,0 +1,228 @@
+/* ==== Map Container ==== */
+.mapContainer {
+  background-color: white;
+  padding: 60px 20px 40px;
+  text-align: center;
+  margin: 40px 0;
+  position: relative;
+  overflow: visible;
+}
+
+.mapTitle {
+  color: #000;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.mapTitle span {
+  color: #8a0000;
+}
+
+.mapSubtitle {
+  color: #a0a0a0;
+  margin-bottom: 40px;
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.mapWrapper {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 20px 20px;
+  overflow: visible;
+}
+
+.mapImageContainer {
+  position: relative;
+  width: 90%;
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
+  border-radius: 8px;
+  overflow: visible;
+}
+
+.mapImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* ==== Dots ==== */
+.locationDot {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: #8B0000;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  border: 2px solid white;
+  box-shadow: 0 0 0 2px rgba(139, 0, 0, 0.7);
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.locationDot:hover,
+.locationDot:focus,
+.activeDot {
+  transform: translate(-50%, -50%) scale(1.5);
+  box-shadow: 0 0 0 8px rgba(139,0,0,0.2);
+  z-index: 20;
+}
+
+/* ==== Popup ==== */
+.popup {
+  position: absolute;
+  background: linear-gradient(180deg, #fff 0%, #f9f9f9 100%);
+  color: #333;
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+  z-index: 100;
+  min-width: 290px;
+  max-width: 320px;
+  text-align: left;
+  transform: translateX(-50%) translateY(20px);
+  border: 1px solid #e6e6e6;
+  overflow: hidden;
+  pointer-events: auto;
+  backdrop-filter: blur(6px);
+  transition: all 0.35s ease-in-out;
+}
+
+.popup.expanded {
+  max-width: 600px;
+}
+
+@media (max-width: 768px) {
+  .popup.expanded {
+    max-width: 95%;
+  }
+}
+
+.popup::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 0 8px 8px 8px;
+  border-style: solid;
+  border-color: transparent transparent #ffffff transparent;
+  filter: drop-shadow(0 -2px 2px rgba(0,0,0,0.1));
+}
+
+.popupImageContainer {
+  width: 100%;
+  height: 170px;
+  overflow: hidden;
+  position: relative;
+}
+
+.popupImage {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin: 0 auto;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.popup:hover .popupImage {
+  transform: scale(1.08);
+  filter: brightness(1.05);
+}
+
+.popupContent {
+  padding: 18px;
+  background: rgba(255,255,255,0.95);
+}
+
+.popup h3 {
+  margin: 0 0 10px 0;
+  color: #1a1a1a;
+  font-size: 1.25rem;
+  font-weight: 700;
+  border-bottom: 1px solid #f1f1f1;
+  padding-bottom: 6px;
+  margin-bottom: 14px;
+  line-height: 1.4;
+}
+
+.popupInfo {
+  margin: 0 0 14px 0;
+  color: #7b0000;
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: all 0.35s ease-in-out;
+}
+
+.popup.expanded .popupInfo {
+  -webkit-line-clamp: unset;
+}
+
+.closeButton, .seeMoreButton {
+  display: inline-block;
+  width: 100%;
+  padding: 10px 0;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.closeButton {
+  background: linear-gradient(90deg,#8a0000,#b00000);
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.closeButton:hover {
+  background: linear-gradient(90deg,#b00000,#d80000);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(139,0,0,0.35);
+}
+
+/* === See More Button - Final === */
+.seeMoreButton {
+  display: inline-block;
+  margin: 10px 0; /* Jarak atas-bawah */
+  padding: auto; /* Lebih kecil */
+  background: linear-gradient(90deg, #ffffff, #f5f5f5);
+  color: #8a0000;
+  font-size: 0.75rem; /* Ukuran kecil */
+  font-weight: 600;
+  border: 1px solid #8a0000;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.25s ease;
+}
+
+.seeMoreButton:hover {
+  background: linear-gradient(90deg, #f9f0f0, #f0f0f0);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(139, 0, 0, 0.2);
+}
+
+/* Responsive untuk mobile */
+@media (max-width: 768px) {
+  .seeMoreButton {
+    font-size: 0.7rem;
+    padding: 3px 8px;
+  }
+}

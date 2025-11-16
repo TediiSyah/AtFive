@@ -1,0 +1,128 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 80px 200px;
+  background-color: #fff;
+  font-family: 'Poppins', sans-serif;
+  gap: 40px;
+}
+
+.textContainer {
+  flex: 1;
+  max-width: 50%;
+}
+
+.text {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #1e1e1e;
+  font-weight: 400;
+  text-align: justify;
+}
+
+.imageContainer {
+  position: relative;
+  flex: 0.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.redCircle {
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  background-color: white;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.smallCircleLeft {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background-color: #b11212;
+  border-radius: 50%;
+  bottom: 30px;
+  left: -30px;
+  z-index: 0;
+}
+
+.smallCircleRight {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  background-color: #b11212;
+  border-radius: 50%;
+  right: -45px;
+  top: 50%;
+  transform: translateY(-50%);
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+  z-index: 0;
+}
+
+.image {
+  position: relative;
+  width: 380px;
+  height: auto;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.socials {
+  position: absolute;
+  right: -60px;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 3;
+}
+
+.icon {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .wrapper {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .textContainer {
+    max-width: 100%;
+  }
+
+  .imageContainer {
+    margin-top: 40px;
+  }
+
+  .redCircle {
+    width: 280px;
+    height: 280px;
+  }
+
+  .image {
+    width: 280px;
+    height: auto;
+  }
+
+  .smallCircleLeft {
+    left: 20px;
+    bottom: 10px;
+  }
+
+  .smallCircleRight {
+    right: 20px;
+  }
+
+  .socials {
+    right: 10px;
+    bottom: 10px;
+  }
+}

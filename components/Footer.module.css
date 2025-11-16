@@ -1,0 +1,139 @@
+.footer {
+  background-color: #fff;
+  color: #1f1f1f;
+  font-family: "Poppins", sans-serif;
+  padding-top: 40px;
+  border-top: 1px solid #eaeaea;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 100px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px 30px;
+  flex-wrap: wrap;
+}
+
+.left {
+  flex: 1;
+  min-width: 300px;
+}
+
+.logoSection {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+}
+
+.desc {
+  margin-top: 10px;
+  color: #555;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.socials {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.socials a {
+  background: #f4f4f4;
+  color: #1f1f1f;
+  border-radius: 50%;
+  padding: 10px;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.socials a:hover {
+  background: #a70000;
+  color: #fff;
+}
+
+.right {
+  flex: 1;
+  min-width: 280px;
+}
+
+.info p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 8px 0;
+  color: #444;
+  font-size: 14px;
+}
+
+.icon {
+  color: #a70000;
+}
+
+.bottom {
+  border-top: 1px solid #eaeaea;
+  margin-top: 40px;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: #555;
+}
+
+.links {
+  display: flex;
+  gap: 30px;
+}
+
+.links a {
+  text-decoration: none;
+  color: #333;
+  transition: 0.2s;
+}
+
+.links a:hover {
+  color: #a70000;
+}
+
+/* ✅ Responsif untuk HP */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 30px;
+    padding: 20px;
+  }
+
+  .left, .right {
+    width: 100%;
+  }
+
+  .socials {
+    justify-content: flex-start;
+  }
+
+  .bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 10px;
+    padding: 20px;
+  }
+
+  .links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+}

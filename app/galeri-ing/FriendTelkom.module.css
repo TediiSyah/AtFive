@@ -1,0 +1,88 @@
+.friendSection {
+  width: 100%;
+  background-color: #fff;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  padding: 100px 0;
+  box-sizing: border-box;
+}
+
+/* 🔥 Judul utama */
+.mainTitle {
+  max-width: 900px;
+  margin: 0 auto 50px auto;
+  padding: 0 20px;
+}
+
+.mainTitle h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #000;
+  margin: 0;
+}
+
+.redText {
+  color: #b30000;
+}
+
+/* ===== DAFTAR EVENT ===== */
+.eventList {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: center;
+  width: 100%;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+/* ===== ITEM GAMBAR ===== */
+.eventItem {
+  position: relative;
+  width: 95%;
+  height: 100px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.eventItem:hover {
+  transform: scale(1.01);
+}
+
+/* Saat ditekan jadi besar */
+.eventItem.active {
+  height: 400px; /* atau sesuaikan */
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .eventItem {
+    height: 80px;
+  }
+
+  .eventItem.active {
+    height: 250px;
+  }
+
+  .mainTitle h2 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .mainTitle h2 {
+    font-size: 1.3rem;
+  }
+
+  .eventItem.active {
+    height: 200px;
+  }
+}

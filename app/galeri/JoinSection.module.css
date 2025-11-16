@@ -1,0 +1,88 @@
+.container {
+  position: relative;
+  background-color: #fff9f9;
+  padding: 6rem 1rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+.heading {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2f2f2f;
+  line-height: 1.4;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 0 1rem;
+}
+
+.highlight {
+  color: #c11c1c; /* merah tua */
+}
+
+.red {
+  color: #b81c1c;
+}
+
+.subtext {
+  margin: 1rem 0 0;
+  color: #555;
+  font-size: 1.1rem;
+}
+
+/* Dekorasi kotak */
+.decor {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 8px;
+  opacity: 0.8;
+  z-index: 1;
+}
+
+.decor1 {
+  background-color: #e8b4b4;
+  top: 20%;
+  left: 20%;
+  transform: rotate(-10deg);
+}
+
+.decor2 {
+  background-color: #b31313;
+  top: 18%;
+  left: 25%;
+  transform: rotate(15deg);
+}
+
+.decor3 {
+  background-color: #e8b4b4;
+  bottom: 30%;
+  right: 30%;
+  transform: rotate(15deg);
+}
+
+.decor4 {
+  background-color: #b31313;
+  bottom: 25%;
+  right: 25%;
+  transform: rotate(15deg);
+}
+
+.decor5 {
+  background-color: #f2c1c1;
+  bottom: 35%;
+  right: 20%;
+  transform: rotate(15deg);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .heading {
+    font-size: 1.5rem;
+  }
+  
+  .decor {
+    width: 20px;
+    height: 20px;
+  }
+}

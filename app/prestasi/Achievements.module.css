@@ -1,0 +1,162 @@
+.wrapper {
+  padding: 80px 100px;
+  background-color: #fff;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+.header {
+  margin-bottom: 50px;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 8px;
+}
+
+.title span {
+  color: #c01010;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #666;
+  font-weight: 400;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  justify-items: center;
+}
+
+.card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 360px;
+  text-align: left;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.imageWrapper {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .image {
+  transform: scale(1.05);
+}
+
+.content {
+  padding: 18px 20px 22px;
+}
+
+.name {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 6px;
+}
+
+.desc {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 14px;
+  line-height: 1.5;
+}
+
+.date {
+  font-size: 13px;
+  color: #777;
+  font-weight: 500;
+}
+
+/* ===== Pagination ===== */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.pagination button {
+  padding: 6px 14px;
+  background-color: #fff;
+  border: 1px solid #c01010;
+  border-radius: 6px;
+  color: #c01010;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.pagination button:hover:not(:disabled) {
+  background-color: #c01010;
+  color: #fff;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.pagination span {
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+}
+
+/* ===== Responsiveness ===== */
+@media (max-width: 992px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .title {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wrapper {
+    padding: 60px 20px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .pagination {
+    gap: 8px;
+  }
+
+  .pagination button {
+    padding: 5px 12px;
+    font-size: 13px;
+  }
+}

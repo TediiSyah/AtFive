@@ -1,0 +1,115 @@
+.container {
+  background-color: #fff7f7;
+  text-align: center;
+  margin: 300px auto;
+  font-family: "Poppins", sans-serif;
+  padding: 2rem 1rem;
+}
+
+.title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #1c1c1c;
+  margin-bottom: 1rem;
+}
+
+.title span {
+  color: #c42020;
+}
+
+/* Wrapper agar tabel bisa di-scroll horizontal di HP */
+.tableWrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* efek lembut di iOS */
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  min-width: 600px; /* biar tetap scrollable di HP */
+}
+
+.table th {
+  background-color: #8B0000;
+  color: #fff;
+  font-weight: 600;
+  padding: 14px 12px;
+  border: 1px solid #ddd;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.table td {
+  padding: 12px;
+  border: 1px solid #f0f0f0;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* Warna baris selang-seling */
+.striped {
+  background-color: #fff9f9;
+}
+
+.table tr:hover {
+  background-color: #ffefef;
+  transition: background-color 0.2s ease;
+}
+
+/* Highlight warna medali */
+.goldHighlight {
+  color: #D4AF37;
+  font-weight: 600;
+}
+
+.silverHighlight {
+  color: #A8A8A8;
+  font-weight: 600;
+}
+
+.bronzeHighlight {
+  color: #CD7F32;
+  font-weight: 600;
+}
+
+/* Responsive: HP & Tablet */
+@media (max-width: 768px) {
+  .container {
+    margin: 120px auto;
+    padding: 1.5rem 1rem;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .table th,
+  .table td {
+    padding: 10px 6px;
+    font-size: 0.8rem;
+  }
+
+  /* Agar tabel bisa digeser kiri-kanan */
+  .tableWrapper {
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .table {
+    min-width: 500px;
+  }
+}

@@ -1,0 +1,140 @@
+
+
+
+.staf-container {
+  min-height: 100vh;
+  background-image: url('/image/bg_regist.png');
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.staf-form-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: row;
+}
+
+.staf-left-section {
+  width: 50%;
+  padding: 20px;
+}
+
+.staf-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.staf-logo {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.staf-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #233255;
+}
+
+.staf-login-link {
+  color: #233255;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.staf-login-link span {
+  color: #800000;
+}
+
+.staf-registration-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.staf-name-fields, .staf-contact-fields {
+  display: flex;
+  gap: 10px;
+}
+
+.staf-input-field {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 5px;
+  font-size: 14px;
+  color: gray;
+}
+
+.staf-gender-school {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.staf-gender {
+  display: flex;
+  gap: 5px;
+}
+
+.staf-radio {
+  margin: 0 5px 0 0;
+}
+
+.staf-error {
+  color: #dc2626;
+  font-size: 12px;
+  margin-top: 5px;
+  display: block;
+}
+
+.staf-register-button {
+  background-color: #dc2626;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.staf-register-button:hover {
+  background-color: #b91c1c;
+}
+
+.staf-right-section {
+  width: 50%;
+  padding: 20px;
+  display: flex; /* Tambahkan flex untuk mengatur gambar */
+  align-items: center; /* Pusatkan secara vertikal */
+  justify-content: center; /* Pusatkan secara horizontal */
+}
+
+.staf-student-image {
+  width: 100%;
+  height: 100%; /* Mengisi tinggi wadah */
+  object-fit: contain; /* Menjaga aspek rasio, gambar menyesuaikan tanpa terpotong */
+  max-height: 100%; /* Batasi tinggi agar tidak melebihi wadah */
+  border-radius: 10px;
+}
+
+@media (max-width: 640px) {
+  .staf-form-container {
+    flex-direction: column;
+  }
+
+  .staf-left-section, .staf-right-section {
+    width: 100%;
+  }
+
+  .staf-student-image {
+    max-height: 300px; /* Batasi tinggi gambar pada layar kecil */
+  }
+}

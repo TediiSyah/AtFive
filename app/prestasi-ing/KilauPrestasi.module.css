@@ -1,0 +1,53 @@
+.container {
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #fff8f8;
+  color: #222;
+}
+
+.title {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.title span {
+  color: #c01010;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  width: 85%;
+  font-size: 15px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.table th {
+  background-color: #c01010;
+  padding: 10px;
+  border: 1px solid #222;
+  font-weight: 600;
+}
+
+.table td {
+  border: 1px solid #222;
+  padding: 8px 12px;
+  background-color: #fff;
+}
+
+.table tr:nth-child(even) td {
+  background-color: #fafafa;
+}
+
+.table tr:hover td {
+  background-color: #fff4f4;
+  transition: 0.2s ease;
+}

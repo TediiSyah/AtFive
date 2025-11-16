@@ -1,0 +1,142 @@
+/* ==========================================
+   PROFILE POPUP - RED ELEGANT MODERN STYLE
+   ========================================== */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+}
+
+.popup {
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 2rem;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
+  position: relative;
+  animation: fadeIn 0.3s ease;
+  border-top: 5px solid #a60000;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: color 0.2s;
+  color: #555;
+}
+
+.closeBtn:hover {
+  color: #a60000;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.profileImage {
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #a60000;
+  box-shadow: 0 4px 10px rgba(166, 0, 0, 0.25);
+  transition: transform 0.3s ease;
+}
+
+.profileImage:hover {
+  transform: scale(1.05);
+}
+
+.name {
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: #a60000;
+  margin: 0 0 0.25rem 0;
+}
+
+.role {
+  color: #2e2e2e;
+  font-size: 1.1rem;
+  margin: 0 0 0.25rem 0;
+  font-weight: 500;
+}
+
+.department {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.body {
+  margin-top: 1rem;
+  color: #3d3d3d;
+  line-height: 1.6;
+}
+
+.bio {
+  margin: 0 0 1.5rem 0;
+}
+
+.experience {
+  font-weight: 600;
+  color: #a60000;
+  background-color: #ffe6e6;
+  padding: 0.4rem 0.8rem;
+  display: inline-block;
+  border-radius: 8px;
+  margin: 0 0 1.5rem 0;
+}
+
+.certifications h3 {
+  font-size: 1.1rem;
+  color: #a60000;
+  margin: 0 0 1rem 0;
+  font-weight: 600;
+}
+
+.certImages {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.certImage {
+  border-radius: 0.75rem;
+  object-fit: contain;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border: 1px solid #f0f0f0;
+  background: #ffffff;
+  padding: 0.6rem;
+  width: 75px;
+  height: 75px;
+  box-shadow: 0 2px 6px rgba(166, 0, 0, 0.1);
+}
+
+.certImage:hover {
+  transform: scale(1.07);
+  box-shadow: 0 6px 14px rgba(166, 0, 0, 0.25);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

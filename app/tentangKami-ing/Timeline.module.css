@@ -1,0 +1,170 @@
+.timelineSection {
+  text-align: center;
+  padding-top: 120px;
+  padding-bottom: 250px;
+  position: relative;
+  border-radius: 40px;
+  overflow: visible;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 50px;
+}
+
+.timelineWrapper {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.timelineContainer {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 60px;
+  padding: 20px 40px;
+  scrollbar-width: none;
+  position: relative;
+  padding-top: 40px;
+  width: 100%;
+}
+
+
+
+/* Garis putus-putus horizontal - responsif */
+.timelineContainer::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 50;
+  right: 0;
+  width: 100%;
+  height: 1px;
+  background-image: linear-gradient(to right, #8b1a1a 0%, transparent 90%);
+  background-size: 20px 1px;
+  background-repeat: repeat;
+  z-index: 1;
+}
+
+.timelineContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.timelineItem {
+  min-width: 280px;
+  flex-shrink: 0;
+  text-align: left;
+  position: relative;
+  padding-top: 30px;
+}
+
+.dot {
+  width: 18px;
+  height: 18px;
+  background-color: #8b1a1a;
+  border-radius: 50%;
+  position: absolute;
+  top: -29px;
+  left: 0;
+  z-index: 2;
+}
+
+.date {
+  color: #831010;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.itemTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 10px;
+}
+
+.desc {
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.6;
+  max-width: 260px;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .timelineSection {
+    padding-top: 80px;
+    padding-bottom: 180px;
+  }
+
+  .timelineContainer {
+    gap: 40px;
+    padding: 30px 20px 0;
+    padding-top: 50px; /* tambah padding atas untuk garis */
+  }
+
+  .timelineContainer::before {
+    top: 25px; /* sesuaikan posisi garis untuk responsif */
+  }
+
+  .timelineItem {
+    min-width: 220px;
+    padding-top: 50px;
+  }
+
+  .dot {
+    top: -25px; /* sesuaikan posisi dot agar tetap di atas garis */
+  }
+
+  .title {
+    font-size: 1.7rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: 40px;
+  }
+
+  .itemTitle {
+    font-size: 1.1rem;
+  }
+
+  .desc {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .timelineContainer {
+    gap: 30px;
+    padding: 25px 15px 20px; /* tambah padding bawah untuk ruang ekstra */
+    padding-top: 40px; /* tambah padding atas */
+  }
+
+  .timelineContainer::before {
+    top: 20px; /* sesuaikan garis untuk layar sangat kecil */
+  }
+
+  .timelineItem {
+    min-width: 180px; /* kurangi min-width agar lebih fleksibel di layar kecil */
+  }
+
+  .dot {
+    width: 16px;
+    height: 16px;
+    top: -10px; /* posisi dot lebih tinggi untuk responsif */
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+}

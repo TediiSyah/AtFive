@@ -1,0 +1,67 @@
+.wrapper {
+  width: 100%;
+  background-color: #fff;
+  padding: 200px 20px;
+}
+
+.quoteContainer {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 80px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quoteContent {
+  position: relative;
+  z-index: 1;
+}
+
+.quoteMark {
+  position: absolute;
+  font-family: Georgia, serif;
+  font-size: 300px;
+  color: rgba(0, 0, 0, 0.2);
+  line-height: 1;
+  z-index: 0;
+  top: -30px;
+  left: 0;
+  user-select: none;
+}
+
+.quoteMarkRight {
+  left: auto;
+  right: 0;
+  transform: rotate(180deg);
+  top: auto;
+  bottom: -50px;
+}
+
+.quote {
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 1.6;
+  color: #2b2b2b;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.red {
+  color: #c01010;
+}
+
+.author {
+  font-size: 16px;
+  color: #333;
+  font-weight: 400;
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .quote {
+    font-size: 22px;
+  }
+}

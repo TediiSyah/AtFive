@@ -1,0 +1,282 @@
+/* ===== CONTAINER ===== */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(2rem, 5vw, 4rem);
+  padding: clamp(2rem, 5vw, 3rem) 5%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ===== IMAGE & TEXT SECTIONS ===== */
+.imageSection,
+.textSection {
+  flex: 1 1 45%;
+  min-width: 300px;
+  box-sizing: border-box;
+}
+
+/* ===== IMAGE ===== */
+.image {
+  width: 100%;
+  max-width: 420px;
+  animation: float 4s ease-in-out infinite;
+  margin: 0 auto;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* ===== TEXT SECTION ===== */
+.textSection {
+  text-align: left;
+}
+
+.title {
+  color: #1e2432;
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+.subtitle {
+  color: #555;
+  font-size: clamp(0.95rem, 1.2vw, 1rem);
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+/* ===== STEPS WRAPPER ===== */
+.stepsWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: clamp(1.5rem, 3vw, 2rem);
+  position: relative;
+  margin-bottom: 2rem;
+  padding: 30px 0 20px; /* tambah ruang atas agar circle tidak terpotong */
+  scrollbar-width: none;
+}
+.stepsWrapper::-webkit-scrollbar {
+  display: none;
+}
+
+/* ===== LINE DI BELAKANG CIRCLE ===== */
+.line {
+  position: absolute;
+  top: 42px; /* lebih ke bawah agar circle muncul di atasnya */
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: rgba(167, 25, 25, 0.3);
+  z-index: 0;
+}
+
+/* ===== STEP ITEM ===== */
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 65px;
+  text-align: center;
+  z-index: 1;
+  position: relative;
+}
+
+.circle {
+  width: clamp(35px, 6vw, 45px);
+  height: clamp(35px, 6vw, 45px);
+  border-radius: 50%;
+  background: #eee;
+  color: #a71919;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  position: relative;
+  z-index: 2;
+}
+
+.circle:hover {
+  transform: scale(1.05);
+  border-color: #a71919;
+}
+
+.active {
+  background: #a71919;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.stepTitle {
+  margin-top: 8px;
+  font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+  color: #777;
+}
+
+.activeText {
+  color: #a71919;
+  font-weight: 600;
+}
+
+/* ===== DESC BOX ===== */
+.descBox {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: clamp(1rem, 2vw, 1.5rem) clamp(1.2rem, 3vw, 2rem);
+}
+
+.descTitle {
+  color: #a71919;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.descList {
+  list-style: disc;
+  padding-left: 1.2rem;
+  color: #444;
+  line-height: 1.6;
+  font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+}
+
+/* ===== ARROW NAV ===== */
+.arrowNav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(1rem, 4vw, 2rem);
+  margin-bottom: 2rem;
+}
+
+.arrow {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: #a71919;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.arrow:hover {
+  transform: scale(1.15);
+  color: #7e1010;
+}
+
+.disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .container {
+    gap: clamp(1.5rem, 4vw, 3rem);
+  }
+}
+
+/* ===== MOBILE OPTIMIZATION ===== */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    gap: clamp(1rem, 3vw, 2rem);
+    padding: clamp(1rem, 5vw, 2rem);
+  }
+
+  .imageSection,
+  .textSection {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .image {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  /* Steps scrollable di HP */
+  .stepsWrapper {
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding: 30px 1rem 1rem;
+    gap: 1.2rem;
+    scroll-snap-type: x mandatory;
+  }
+
+  .step {
+    flex: 0 0 auto;
+    min-width: 80px;
+    scroll-snap-align: center;
+  }
+
+  .circle {
+    width: 40px;
+    height: 40px;
+    font-size: 0.9rem;
+  }
+
+  .stepTitle {
+    font-size: 0.8rem;
+    line-height: 1.2;
+  }
+
+  .line {
+    display: none;
+  }
+
+  .descBox {
+    padding: 1.2rem 1.4rem;
+  }
+
+  .descTitle {
+    font-size: 1.1rem;
+  }
+
+  .descList {
+    font-size: 0.9rem;
+  }
+
+  .arrowNav {
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .arrow {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .image {
+    max-width: 250px;
+  }
+
+  .step {
+    min-width: 70px;
+  }
+
+  .circle {
+    width: 36px;
+    height: 36px;
+    font-size: 0.85rem;
+  }
+
+  .stepTitle {
+    font-size: 0.75rem;
+  }
+
+  .arrowNav {
+    gap: clamp(0.5rem, 5vw, 1rem);
+  }
+}

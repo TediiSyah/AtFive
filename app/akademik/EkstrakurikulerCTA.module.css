@@ -1,0 +1,81 @@
+.container {
+  position: relative;
+  background: #fff;
+  border-radius: 20px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  text-align: center;
+  max-width: 1100px;
+  margin: 150px auto;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #000;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.button {
+  background: #f9eaea;
+  color: #c61919;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 9999px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.button:hover {
+  background: #c61919;
+  color: #fff;
+}
+
+/* Hiasan Bintang */
+.star {
+  position: absolute;
+  width: 60px;
+  height: auto;
+  opacity: 0.9;
+}
+
+.starLeft {
+  bottom: 10px;
+  left: 20px;
+}
+
+.starRight {
+  top: 10px;
+  right: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .star {
+    width: 40px;
+  }
+}
